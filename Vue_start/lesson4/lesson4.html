@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <button @click='show=!show'>Показать/Скрыть</button>
+        <!-- <p v-if="show">Текст, который может стать невидимым</p> -->
+
+        <!-- <p v-show="show">Текст, который может стать невидимым</p> -->
+
+        <p v-if="show">Текст, который может стать невидимым</p>
+        <p v-else>Новый текст</p>
+
+
+        <ul>
+            <li v-for="(car, i) in cars">{{i+1}}. Модель {{ car.model }}, скорость: {{ car.speed }}</li>
+        </ul>
+    </div>
+
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="lesson4.js"></script>
+</body>
+</html>
