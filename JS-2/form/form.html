@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="title">Форма обратной связи</div>
+    <form action="#" method="POST" class="form">
+    <fieldset class="fieldset">
+        <legend>Контактная информация</legend>
+        <div class="block">
+            <label>Имя</label>
+            <input type="text" class="value" data-id="name" placeholder="Иван" required>
+            <div class="error name"></div>
+        </div>
+
+        <div class="block">
+            <label>Телефон</label>
+            <input type="text" class="value" data-id="tel" placeholder="+7(912)3456789" required>
+            <div class="error tel"></div>
+        </div>
+
+        <div class="block">
+            <label>Адрес электронной почты</label>
+            <input type="email" class="value" data-id="email" placeholder="mymail@mail.ru">
+            <div class="error email"></div>
+        </div>
+    </fieldset>
+
+    <fieldset class="fieldset">
+        <legend>Напишите нам</legend>
+        <div class="block">
+            <textarea type="text" class="value" data-id="text" required></textarea></textarea>
+            <div class="error text"></div>
+        </div>
+        </fieldset>
+
+        <div class="button">
+            <button type="submit" class="submit">Отправить</button>
+            <button type="reset">Очистить форму</button>
+
+        </div>
+
+    </form>
+</div>
+
+    <!-- <script defer src="form.js"></script> -->
+    <script defer src="js1.js"></script>
+</body>
+</html>

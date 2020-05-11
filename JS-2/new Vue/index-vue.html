@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Магазин на Vue</title>
+</head>
+<body>
+    <div class="container">
+    
+        <header class="header">
+            <div class="logo">Магазин</div>
+            <div class="basket">
+                <button class="button-basket" type="button" @click="visible=!visible">Корзина</button>
+                <div class="basket-block" v-show="visible">
+                    <span v-if="basketIsEmpty()">{{ text }}</span>
+                    <div class = "basket-product" v-for="el of basketProducts" :key="el.id_product">
+                        <div>
+                            <img :src = "imgBasket" alt = "el.product_name">
+                            <div>{{el.product_name}}</div>
+                            <div>{{el.price}}</div>
+                            <div>Количество: {{el.quantity}}</div>
+                        </div>
+                        <div>
+                            <div>{{el.price*el.quantity}}</div>
+                            <button class = "delete-button" @click="deleteProductBasket(el)">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="catalog">
+            <div class="products">
+                <div class = "product-card" v-for="el of products" :key="el.id_product">
+                    <img :src = "imgCatalog" :alt = "el.product_name">
+                    <div>{{el.product_name}}</div>
+                    <div>{{el.price}}</div>
+                    <button class ="buy" @click="addProduct(el)">Купить</button>
+                   </div>
+            </div>
+        </main>
+    
+    </div>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js-vue.js"></script>    
+</body>
+</html>

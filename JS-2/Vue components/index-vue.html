@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Магазин на Vue</title>
+</head>
+<body>
+    <div class="container">
+    
+        <header class="header">
+            <div class="logo">Магазин</div>
+            <div class="basket">
+                <basket ref='basket'></basket>
+            </div>
+        </header>
+        <main class="catalog">
+            <catalog ref='catalog'></catalog>
+        </main>
+    
+    </div>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/basketcomp.js"></script>  
+<script src="js/catalogcomp.js"></script>
+<script src="js/js-vue.js"></script>  
+</body>
+</html>

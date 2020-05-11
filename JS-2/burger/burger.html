@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бургер</title>
+    <style>
+        body{
+            margin-left: 50px;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+        .button {
+            width: 60px;
+            display: flex;
+            justify-content:center;
+            border:
+                1px solid black;
+                margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+<h3>Соберите свой бургер</h3>
+    <form class="form">
+        <fieldset id = "size">
+            <legend>Выберите размер бургера</legend>
+           <input type="radio" name="size" value="big"  data-price = "100" data-calories = "40" checked><label> Большой (100 рублей, 40 калорий)</label><br>
+           <input type="radio" name="size" value="smal" data-price = "50" data-calories = "20"><label> Маленький (50 рублей, 20 калорий)</label>
+        </fieldset>
+        <fieldset>
+            <legend>Выберите одну из доступных начинок</legend>
+            <input type="radio" name="filling" value="cheese" data-price = "10" data-calories = "20" checked><label> С сыром (+10 рублей, +20 калорий)</label><br>
+            <input type="radio" name="filling" value="salad" data-price = "20" data-calories = "5"><label> С салатом (+20 рублей, +5 калорий)</label><br>
+           <input type="radio" name="filling" value="potatoes" data-price = "15" data-calories = "10"><label> С картошкой (+15 рублей, +10 калорий)</label>
+        </fieldset>
+        <fieldset>
+            <legend>Дополнительно</legend>
+           <input type="checkbox" name="spice" value="seasoning" data-price = "15" data-calories = "0"><label> Приправа (+15 рублей, +0 калорий)</label><br>
+           <input type="checkbox" name="spice" value="sauce" data-price = "20" data-calories = "5"><label> Майонез (+20 рублей, +5 калорий)</label>
+        </fieldset>
+        <div id="order" class="button">Купить</div>
+        <div>Цена: <span class = "price">0</span></div>
+        <div>Калорийность: <span class = "calories">0</span></div>
+    </form>
+    
+<script src="burger.js"></script>
+<script>
+//document.getElementById('order').addEventListener('click', () => Burger.getBurger());
+
+document.getElementById('order').addEventListener('click', () => {
+    let calc = new Calculator()
+    console.log(calc);
+    calc.sumPrice();
+    calc.sumCalories();
+})
+</script>
+</body>
+</html>
