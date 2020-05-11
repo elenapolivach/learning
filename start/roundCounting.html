@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<script>
+	
+	var n=0;
+	do {
+		if ((Math.random() * 6) < 1) {
+			alert('Тебе не повезло, пока!');
+			break;
+		}
+		
+		n++;
+		
+	} while(prompt('1 - продолжаем играть, другое - стоп:') ==1)
+
+	alert('Сыграно раундов:' +n);
+	alert('Конец');
+	
+</script>

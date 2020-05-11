@@ -1,0 +1,14 @@
+<meta charset="utf-8">
+<script>
+
+var s=parseInt(prompt('Сумма вклада:'));
+var p=parseInt(prompt('Ставка:'));
+var n=parseInt(prompt('Срок:'));
+var i=1;
+
+for(i; i<=n; i++) {
+	s=s*((100+p)/100);
+	alert('Через ' +i+ ' лет, сумма на счёте ' +s);
+}
+
+</script>

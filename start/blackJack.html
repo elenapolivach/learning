@@ -1,0 +1,86 @@
+<meta charset="utf-8">
+<script>
+
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getCard() {
+	var cards=['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+	return cards[getRandomInt(0, cards.length - 1)];
+}
+
+function getSum(arr) {
+	 var Sum = 0;
+	 for (var i=0; i<arr.length; i++) {
+		var card = arr[i];
+		if (card == 'J' || card=='Q' || card == 'K') {
+			Sum = Sum + 10;
+		} else if (card=='6' || card=='7' || card=='8' || card=='9' || card=='10') {
+			Sum = Sum + parseInt(card);
+		} else if (card == 'A' && Sum < 11) {
+			Sum = Sum + 11;
+		} else {
+			Sum = Sum + 1;
+		}
+	 }
+	 return Sum;
+ }
+
+function getStatus() {
+	return 'Дилер ' + dealer.join (' ') + ' Игрок ' + player.join(' ') + '.'
+}
+
+function getStatusAll() {
+	return 'Дилер ' + dealer.join (' ') + '=' + getSum(dealer) + ' Игрок ' + player.join(' ') + '=' +  getSum(player) + '.'
+}
+
+
+var dealer=[getCard()];
+var player=[getCard(), getCard()];
+
+
+
+if (getSum(player) == 21) {
+	alert ('ВАУ! Вот это повезло! Блэк Джек! Ты выиграл');
+}else{
+var answer = '';
+do {
+	answer = prompt(getStatus() + ' Хотите еще карту? 1 - да, иначе - нет.');
+	if (answer=='1') {
+		player.push(getCard());
+	alert(getStatus());
+	if (getSum(player) > 21) {
+		alert('Перебор! Вы проиграли!');
+		break;
+	} else if (getSum(player) == 21) {
+		alert ('Блек Джек! Вы выиграли!');
+		break;
+	}
+	
+	} else {
+		while(getSum(dealer) < 17){
+		dealer.push(getCard());
+	}
+
+
+	if (getSum(dealer) == 21){
+		alert('У дилера Блэк Джек! Ты проиграл! ');
+	}else if (getSum(dealer)> 21) {
+		alert('У дилера перебор! Ты выиграл! ');
+	}else if(getSum(dealer) == getSum(player)) {
+		alert('Равное количество очков! Ничья! ' + getStatusAll());
+	}else if (getSum(player) > getSum(dealer)) {
+		alert('Вы выиграли! ' + getStatusAll());
+	}
+	else{
+		alert('Вы проиграли! ' + getStatusAll());
+	}
+}
+
+	}while (answer=='1');
+}
+
+
+
+</script>
