@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 0 auto;
+            width: 600px;
+            height: 300px;
+        }
+        .form {
+            display: flex;
+            flex-direction:column;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size:small;
+            line-height: 40px;
+        }
+
+        .error {
+            display: flex;
+        }
+        
+        .generalStyle {
+            width: 300px;
+            height: 40px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .generalStyle:hover {
+            background-color:rgb(243, 247, 247);
+        }
+        .generalStyle:focus {
+            outline: none;
+        }
+        .button {
+            border-radius: 10px;
+        }
+        .button:active {
+            background-color:gainsboro;
+            outline: none;
+        }
+
+        input:valid {
+        border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="#" class="form">
+          <div class="error"><input type="text" class="name generalStyle" placeholder="Имя"></div>
+          <div class="error"><input type="text" class="phone generalStyle" placeholder="+7(900)-000-00-00"></div>
+          <div class="error"><input type="password" class="pass generalStyle" placeholder="Пароль" ></div>
+          <div class="error"><input type="password" class="verification generalStyle" placeholder="Повторите пароль"></div>
+          <div> <button type="submit" class="button generalStyle">Отправить</button></div>
+        </form>
+    </div>
+    <!-- <script src="5-3.js"></script>  -->
+    <!-- <script src = "js.js"></script> -->
+    <script src="js2.js"></script>
+</body>
+</html>
